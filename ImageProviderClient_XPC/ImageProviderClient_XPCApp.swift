@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ImageProviderClient_XPCApp: App {
+    var connectionManager = ImageProviderManager()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(connectionManager)
         }
     }
 }

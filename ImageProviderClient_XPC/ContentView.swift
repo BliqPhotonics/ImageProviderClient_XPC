@@ -8,17 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @EnvironmentObject var imageProviderManager: ImageProviderManager
+
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            
+            HStack {
+                ForEach(imageProviderManager.imageProviders.map(\.key), id: \.self) { key in
+                    ImageProviderView(imageProvider: imageProviderManager.imageProviders[key]!)
+                    
+                }
+            }
+            
+            Spacer()
+            ForEach(ImageProviderManager.XPCService.allCases, id: \.rawValue) { service in
+                Button(service.label) {
+                    imageProviderManager.connectToImageProvider(service)
+                }
+            }
         }
-        .padding()
     }
+
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static let imageProviderManager: ImageProviderManager = {
+        let imageProviderManager = ImageProviderManager()
+
+        return imageProviderManager
+    }()
+
+    static var previews: some View {
+        ContentView()
+            .environmentObject(imageProviderManager)
+
+    }
 }

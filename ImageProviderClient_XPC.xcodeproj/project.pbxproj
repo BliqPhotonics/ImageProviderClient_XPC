@@ -14,6 +14,13 @@
 		302C0C542AE946980098B392 /* ImageProviderClient_XPCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C0C532AE946980098B392 /* ImageProviderClient_XPCTests.swift */; };
 		302C0C5E2AE946980098B392 /* ImageProviderClient_XPCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C0C5D2AE946980098B392 /* ImageProviderClient_XPCUITests.swift */; };
 		302C0C602AE946980098B392 /* ImageProviderClient_XPCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C0C5F2AE946980098B392 /* ImageProviderClient_XPCUITestsLaunchTests.swift */; };
+		302C0C772AE947BF0098B392 /* ImageProviderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C0C762AE947BF0098B392 /* ImageProviderManager.swift */; };
+		302C0C7B2AE94EDE0098B392 /* DebugImageProviderXPCService-arm64.xpc in Resources */ = {isa = PBXBuildFile; fileRef = 302C0C7A2AE94EDE0098B392 /* DebugImageProviderXPCService-arm64.xpc */; };
+		302C0C7C2AE94EE20098B392 /* DebugImageProviderXPCService-arm64.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 302C0C7A2AE94EDE0098B392 /* DebugImageProviderXPCService-arm64.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		302C0C7F2AE954680098B392 /* DebugImageProviderXPCService-universal.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 302C0C7D2AE9545D0098B392 /* DebugImageProviderXPCService-universal.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		302C0C802AE954680098B392 /* DebugImageProviderXPCService-x86.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 302C0C7E2AE9545D0098B392 /* DebugImageProviderXPCService-x86.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		302C0C822AE9581F0098B392 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C0C812AE9581F0098B392 /* ImageProvider.swift */; };
+		302C0C842AE95D500098B392 /* ImageProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C0C832AE95D500098B392 /* ImageProviderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +40,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		302C0C722AE946F40098B392 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				302C0C7F2AE954680098B392 /* DebugImageProviderXPCService-universal.xpc in CopyFiles */,
+				302C0C802AE954680098B392 /* DebugImageProviderXPCService-x86.xpc in CopyFiles */,
+				302C0C7C2AE94EE20098B392 /* DebugImageProviderXPCService-arm64.xpc in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		302C0C3E2AE946960098B392 /* ImageProviderClient_XPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageProviderClient_XPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		302C0C412AE946960098B392 /* ImageProviderClient_XPCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProviderClient_XPCApp.swift; sourceTree = "<group>"; };
@@ -45,6 +67,12 @@
 		302C0C592AE946980098B392 /* ImageProviderClient_XPCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageProviderClient_XPCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		302C0C5D2AE946980098B392 /* ImageProviderClient_XPCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProviderClient_XPCUITests.swift; sourceTree = "<group>"; };
 		302C0C5F2AE946980098B392 /* ImageProviderClient_XPCUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProviderClient_XPCUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		302C0C762AE947BF0098B392 /* ImageProviderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProviderManager.swift; sourceTree = "<group>"; };
+		302C0C7A2AE94EDE0098B392 /* DebugImageProviderXPCService-arm64.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "DebugImageProviderXPCService-arm64.xpc"; sourceTree = "<group>"; };
+		302C0C7D2AE9545D0098B392 /* DebugImageProviderXPCService-universal.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "DebugImageProviderXPCService-universal.xpc"; sourceTree = "<group>"; };
+		302C0C7E2AE9545D0098B392 /* DebugImageProviderXPCService-x86.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "DebugImageProviderXPCService-x86.xpc"; sourceTree = "<group>"; };
+		302C0C812AE9581F0098B392 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
+		302C0C832AE95D500098B392 /* ImageProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProviderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +103,9 @@
 		302C0C352AE946960098B392 = {
 			isa = PBXGroup;
 			children = (
+				302C0C7D2AE9545D0098B392 /* DebugImageProviderXPCService-universal.xpc */,
+				302C0C7E2AE9545D0098B392 /* DebugImageProviderXPCService-x86.xpc */,
+				302C0C7A2AE94EDE0098B392 /* DebugImageProviderXPCService-arm64.xpc */,
 				302C0C402AE946960098B392 /* ImageProviderClient_XPC */,
 				302C0C522AE946970098B392 /* ImageProviderClient_XPCTests */,
 				302C0C5C2AE946980098B392 /* ImageProviderClient_XPCUITests */,
@@ -97,9 +128,12 @@
 			children = (
 				302C0C412AE946960098B392 /* ImageProviderClient_XPCApp.swift */,
 				302C0C432AE946960098B392 /* ContentView.swift */,
+				302C0C832AE95D500098B392 /* ImageProviderView.swift */,
+				302C0C762AE947BF0098B392 /* ImageProviderManager.swift */,
 				302C0C452AE946970098B392 /* Assets.xcassets */,
 				302C0C4A2AE946970098B392 /* ImageProviderClient_XPC.entitlements */,
 				302C0C472AE946970098B392 /* Preview Content */,
+				302C0C812AE9581F0098B392 /* ImageProvider.swift */,
 			);
 			path = ImageProviderClient_XPC;
 			sourceTree = "<group>";
@@ -139,6 +173,7 @@
 				302C0C3A2AE946960098B392 /* Sources */,
 				302C0C3B2AE946960098B392 /* Frameworks */,
 				302C0C3C2AE946960098B392 /* Resources */,
+				302C0C722AE946F40098B392 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -234,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				302C0C492AE946970098B392 /* Preview Assets.xcassets in Resources */,
+				302C0C7B2AE94EDE0098B392 /* DebugImageProviderXPCService-arm64.xpc in Resources */,
 				302C0C462AE946970098B392 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,7 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302C0C822AE9581F0098B392 /* ImageProvider.swift in Sources */,
 				302C0C442AE946960098B392 /* ContentView.swift in Sources */,
+				302C0C772AE947BF0098B392 /* ImageProviderManager.swift in Sources */,
+				302C0C842AE95D500098B392 /* ImageProviderView.swift in Sources */,
 				302C0C422AE946960098B392 /* ImageProviderClient_XPCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
