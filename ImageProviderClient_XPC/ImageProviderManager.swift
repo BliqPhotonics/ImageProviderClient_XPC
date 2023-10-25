@@ -21,27 +21,10 @@ class ImageProviderManager: NSObject, ObservableObject {
             with: XPCDebugImageProviderServiceProtocol.self
         )
 
-        // Configure the XPC connection's interruption handler
-        connection.interruptionHandler = {
-
-            // If the interruption handler has been called, the XPC connection remains valid, and the
-            // the XPC service will automatically be re-launched with future calls to the connection object
-            NSLog("connection to XPC service has been interrupted")
-        }
-
-        // Configure the XPC connection's invalidation handler
-//        _connection.invalidationHandler = {
-//
-//            // If the invalidation handler has been called, the XPC connection is no longer valid and must be recreated
-//            NSLog("connection to XPC service has been invalidated")
-//            //self._connection = nil
-//            self.imageProviders[label]?.connection = nil
-//        }
-
         // New connections must be resumed before use
         connection.resume()
 
-        NSLog("successfully connected to XPC service: \(service.label))")
+        NSLog("successfully connected to XPC service: \(service.label)")
         
         return connection
     }

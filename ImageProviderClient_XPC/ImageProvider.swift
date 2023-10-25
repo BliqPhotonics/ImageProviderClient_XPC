@@ -26,13 +26,26 @@ class ImageProvider: ObservableObject, ClientProtocol, XPCConnected {
         connection?.exportedObject = self
         connection?.exportedInterface = NSXPCInterface(with: ClientProtocol.self)
         connection?.invalidationHandler = {
-            NSLog("connection to XPC service has been invalidated")
-            Task {
+            
+            Task { [service = self.service] in
                 await MainActor.run {
+                    self.connectionMessage = "Connection to XPC service \(service.rawValue) has been invalidated"
                     self.connection = nil
                 }
             }
         }
+        
+        connection?.interruptionHandler = {
+            Task { [service = self.service] in
+                await MainActor.run {
+                    self.connectionMessage = "Connection to XPC service \(service.rawValue) has been interrupted"
+
+                    self.connection = nil
+                }
+            }
+        }
+        
+        self.connectionMessage = "Successfully connected to XPC service: \(service.label)"
         
         xpcService = connection?
             .remoteObjectProxyWithErrorHandler { error in
@@ -46,6 +59,9 @@ class ImageProvider: ObservableObject, ClientProtocol, XPCConnected {
 
     @Published var configuration = ImageProvider.Configuration()
     @Published var image: Image?
+    @Published var connectionMessage: String? {
+        didSet { NSLog(connectionMessage ?? "") }
+    }
     @Published var message: String?
     @Published var error: Swift.Error?
     

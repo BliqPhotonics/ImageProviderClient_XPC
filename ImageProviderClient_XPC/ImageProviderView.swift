@@ -15,6 +15,12 @@ struct ImageProviderView: View {
             Text("Service: \(imageProvider.service.rawValue)")
                 .font(.title)
             
+            if let message = imageProvider.connectionMessage {
+                Text("Message: \(message)")
+                    .font(.headline)
+            }
+            
+            
             if imageProvider.connection == nil {
                 Color.clear
                     .overlay {
