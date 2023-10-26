@@ -12,7 +12,7 @@ protocol XPCConnected {
     var connection: NSXPCConnection? { get set }
 }
 
-class ImageProvider: ObservableObject, ClientProtocol, XPCConnected {
+class ImageProvider: ObservableObject, ImageProviderXPCClientProtocol, XPCConnected {
 
     init(
         service: ImageProviderManager.XPCService
@@ -24,7 +24,7 @@ class ImageProvider: ObservableObject, ClientProtocol, XPCConnected {
     func connectToService() {
         connection = ImageProviderManager.establishConnectionTo(service: service)
         connection?.exportedObject = self
-        connection?.exportedInterface = NSXPCInterface(with: ClientProtocol.self)
+        connection?.exportedInterface = NSXPCInterface(with: ImageProviderXPCClientProtocol.self)
         connection?.invalidationHandler = {
             
             Task { [service = self.service] in
@@ -51,11 +51,11 @@ class ImageProvider: ObservableObject, ClientProtocol, XPCConnected {
             .remoteObjectProxyWithErrorHandler { error in
                 NSLog("\(error)")
                 self.error = error
-            } as? XPCDebugImageProviderServiceProtocol
+            } as? ImageProviderXPCServiceProtocol
     }
     let service: ImageProviderManager.XPCService
     @Published var connection: NSXPCConnection?
-    var xpcService: XPCDebugImageProviderServiceProtocol?
+    var xpcService: ImageProviderXPCServiceProtocol?
 
     @Published var configuration = ImageProvider.Configuration()
     @Published var image: Image?
@@ -103,7 +103,7 @@ class ImageProvider: ObservableObject, ClientProtocol, XPCConnected {
         connection = nil
     }
 
-    // MARK: ClientProtocol
+    // MARK: ImageProviderXPCClientProtocol
     func publish(bitmap: NSBitmapImageRep) {
         let image = convertToImage(bitmap: bitmap)
         Task { [image] in

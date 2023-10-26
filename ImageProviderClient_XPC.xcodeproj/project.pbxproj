@@ -21,6 +21,11 @@
 		302C0C802AE954680098B392 /* DebugImageProviderXPCService-x86.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 302C0C7E2AE9545D0098B392 /* DebugImageProviderXPCService-x86.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		302C0C822AE9581F0098B392 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C0C812AE9581F0098B392 /* ImageProvider.swift */; };
 		302C0C842AE95D500098B392 /* ImageProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302C0C832AE95D500098B392 /* ImageProviderView.swift */; };
+		3063501B2AEAB54B0085A3E5 /* FlirImageProviderServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063501A2AEAB54B0085A3E5 /* FlirImageProviderServer.swift */; };
+		3063501F2AEAB54B0085A3E5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063501E2AEAB54B0085A3E5 /* main.swift */; };
+		306350242AEAB54B0085A3E5 /* FlirImageProviderServer.xpc in CopyFiles */ = {isa = PBXBuildFile; fileRef = 306350182AEAB54B0085A3E5 /* FlirImageProviderServer.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3063502A2AEAD2990085A3E5 /* XPCProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306350292AEAD2990085A3E5 /* XPCProtocols.swift */; };
+		3063502B2AEAD2E70085A3E5 /* XPCProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306350292AEAD2990085A3E5 /* XPCProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +43,13 @@
 			remoteGlobalIDString = 302C0C3D2AE946960098B392;
 			remoteInfo = ImageProviderClient_XPC;
 		};
+		306350222AEAB54B0085A3E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 302C0C362AE946960098B392 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 306350172AEAB54B0085A3E5;
+			remoteInfo = FlirImageProviderServer;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +61,7 @@
 			files = (
 				302C0C7F2AE954680098B392 /* DebugImageProviderXPCService-universal.xpc in CopyFiles */,
 				302C0C802AE954680098B392 /* DebugImageProviderXPCService-x86.xpc in CopyFiles */,
+				306350242AEAB54B0085A3E5 /* FlirImageProviderServer.xpc in CopyFiles */,
 				302C0C7C2AE94EE20098B392 /* DebugImageProviderXPCService-arm64.xpc in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +86,12 @@
 		302C0C7E2AE9545D0098B392 /* DebugImageProviderXPCService-x86.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; path = "DebugImageProviderXPCService-x86.xpc"; sourceTree = "<group>"; };
 		302C0C812AE9581F0098B392 /* ImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		302C0C832AE95D500098B392 /* ImageProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProviderView.swift; sourceTree = "<group>"; };
+		306350182AEAB54B0085A3E5 /* FlirImageProviderServer.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = FlirImageProviderServer.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		3063501A2AEAB54B0085A3E5 /* FlirImageProviderServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlirImageProviderServer.swift; sourceTree = "<group>"; };
+		3063501E2AEAB54B0085A3E5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		306350202AEAB54B0085A3E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		306350212AEAB54B0085A3E5 /* FlirImageProviderServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlirImageProviderServer.entitlements; sourceTree = "<group>"; };
+		306350292AEAD2990085A3E5 /* XPCProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPCProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +116,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		306350152AEAB54B0085A3E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -109,6 +135,7 @@
 				302C0C402AE946960098B392 /* ImageProviderClient_XPC */,
 				302C0C522AE946970098B392 /* ImageProviderClient_XPCTests */,
 				302C0C5C2AE946980098B392 /* ImageProviderClient_XPCUITests */,
+				306350192AEAB54B0085A3E5 /* FlirImageProviderServer */,
 				302C0C3F2AE946960098B392 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +146,7 @@
 				302C0C3E2AE946960098B392 /* ImageProviderClient_XPC.app */,
 				302C0C4F2AE946970098B392 /* ImageProviderClient_XPCTests.xctest */,
 				302C0C592AE946980098B392 /* ImageProviderClient_XPCUITests.xctest */,
+				306350182AEAB54B0085A3E5 /* FlirImageProviderServer.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -134,6 +162,7 @@
 				302C0C4A2AE946970098B392 /* ImageProviderClient_XPC.entitlements */,
 				302C0C472AE946970098B392 /* Preview Content */,
 				302C0C812AE9581F0098B392 /* ImageProvider.swift */,
+				306350292AEAD2990085A3E5 /* XPCProtocols.swift */,
 			);
 			path = ImageProviderClient_XPC;
 			sourceTree = "<group>";
@@ -163,6 +192,17 @@
 			path = ImageProviderClient_XPCUITests;
 			sourceTree = "<group>";
 		};
+		306350192AEAB54B0085A3E5 /* FlirImageProviderServer */ = {
+			isa = PBXGroup;
+			children = (
+				3063501A2AEAB54B0085A3E5 /* FlirImageProviderServer.swift */,
+				3063501E2AEAB54B0085A3E5 /* main.swift */,
+				306350202AEAB54B0085A3E5 /* Info.plist */,
+				306350212AEAB54B0085A3E5 /* FlirImageProviderServer.entitlements */,
+			);
+			path = FlirImageProviderServer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -178,6 +218,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				306350232AEAB54B0085A3E5 /* PBXTargetDependency */,
 			);
 			name = ImageProviderClient_XPC;
 			productName = ImageProviderClient_XPC;
@@ -220,6 +261,23 @@
 			productReference = 302C0C592AE946980098B392 /* ImageProviderClient_XPCUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		306350172AEAB54B0085A3E5 /* FlirImageProviderServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 306350272AEAB54B0085A3E5 /* Build configuration list for PBXNativeTarget "FlirImageProviderServer" */;
+			buildPhases = (
+				306350142AEAB54B0085A3E5 /* Sources */,
+				306350152AEAB54B0085A3E5 /* Frameworks */,
+				306350162AEAB54B0085A3E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlirImageProviderServer;
+			productName = FlirImageProviderServer;
+			productReference = 306350182AEAB54B0085A3E5 /* FlirImageProviderServer.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -241,6 +299,9 @@
 						CreatedOnToolsVersion = 15.1;
 						TestTargetID = 302C0C3D2AE946960098B392;
 					};
+					306350172AEAB54B0085A3E5 = {
+						CreatedOnToolsVersion = 15.1;
+					};
 				};
 			};
 			buildConfigurationList = 302C0C392AE946960098B392 /* Build configuration list for PBXProject "ImageProviderClient_XPC" */;
@@ -259,6 +320,7 @@
 				302C0C3D2AE946960098B392 /* ImageProviderClient_XPC */,
 				302C0C4E2AE946970098B392 /* ImageProviderClient_XPCTests */,
 				302C0C582AE946980098B392 /* ImageProviderClient_XPCUITests */,
+				306350172AEAB54B0085A3E5 /* FlirImageProviderServer */,
 			);
 		};
 /* End PBXProject section */
@@ -288,6 +350,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		306350162AEAB54B0085A3E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -299,6 +368,7 @@
 				302C0C442AE946960098B392 /* ContentView.swift in Sources */,
 				302C0C772AE947BF0098B392 /* ImageProviderManager.swift in Sources */,
 				302C0C842AE95D500098B392 /* ImageProviderView.swift in Sources */,
+				3063502A2AEAD2990085A3E5 /* XPCProtocols.swift in Sources */,
 				302C0C422AE946960098B392 /* ImageProviderClient_XPCApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +390,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		306350142AEAB54B0085A3E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3063502B2AEAD2E70085A3E5 /* XPCProtocols.swift in Sources */,
+				3063501B2AEAB54B0085A3E5 /* FlirImageProviderServer.swift in Sources */,
+				3063501F2AEAB54B0085A3E5 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -332,6 +412,11 @@
 			isa = PBXTargetDependency;
 			target = 302C0C3D2AE946960098B392 /* ImageProviderClient_XPC */;
 			targetProxy = 302C0C5A2AE946980098B392 /* PBXContainerItemProxy */;
+		};
+		306350232AEAB54B0085A3E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 306350172AEAB54B0085A3E5 /* FlirImageProviderServer */;
+			targetProxy = 306350222AEAB54B0085A3E5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -457,6 +542,7 @@
 		302C0C642AE946980098B392 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ImageProviderClient_XPC/ImageProviderClient_XPC.entitlements;
@@ -484,6 +570,7 @@
 		302C0C652AE946980098B392 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ImageProviderClient_XPC/ImageProviderClient_XPC.entitlements;
@@ -580,6 +667,52 @@
 			};
 			name = Release;
 		};
+		306350252AEAB54B0085A3E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				CODE_SIGN_ENTITLEMENTS = FlirImageProviderServer/FlirImageProviderServer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 776ZH6DZ4V;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlirImageProviderServer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FlirImageProviderServer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bliq.FlirImageProviderServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		306350262AEAB54B0085A3E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				CODE_SIGN_ENTITLEMENTS = FlirImageProviderServer/FlirImageProviderServer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 776ZH6DZ4V;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlirImageProviderServer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FlirImageProviderServer;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bliq.FlirImageProviderServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,6 +748,15 @@
 			buildConfigurations = (
 				302C0C6A2AE946980098B392 /* Debug */,
 				302C0C6B2AE946980098B392 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		306350272AEAB54B0085A3E5 /* Build configuration list for PBXNativeTarget "FlirImageProviderServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				306350252AEAB54B0085A3E5 /* Debug */,
+				306350262AEAB54B0085A3E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

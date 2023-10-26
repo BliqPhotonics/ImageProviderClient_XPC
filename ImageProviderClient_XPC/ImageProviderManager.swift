@@ -18,7 +18,7 @@ class ImageProviderManager: NSObject, ObservableObject {
 
         // Set the XPC interface of the connection's remote object using the XPC service's published protocol
         connection.remoteObjectInterface = NSXPCInterface(
-            with: XPCDebugImageProviderServiceProtocol.self
+            with: ImageProviderXPCServiceProtocol.self
         )
 
         // New connections must be resumed before use
@@ -43,26 +43,15 @@ class ImageProviderManager: NSObject, ObservableObject {
         case universal
         case arm64
         case x86
+        case flir
         
         var label: String {
-            "com.bliq.DebugImageProviderXPCService-\(self.rawValue)"
+            switch self {
+                case .flir: return XPCServiceLabels.flir.rawValue
+                default:
+                    return "com.bliq.DebugImageProviderXPCService-\(self.rawValue)"
+            }
         }
     }
 
-}
-
-@objc protocol XPCDebugImageProviderServiceProtocol {
-    func start()
-    func stop()
-    func configure(
-        width: Int,
-        height: Int,
-        bitsPerSample: Int,
-        samplesPerPixel: Int,
-        with reply: @escaping (String?, Error?) -> Void
-    )
-}
-
-@objc protocol ClientProtocol {
-    func publish(bitmap: NSBitmapImageRep)
 }
